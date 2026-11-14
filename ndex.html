@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Princess ❤️</title>
+
+<style>
+* {box-sizing:border-box}
+body {
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Georgia,serif;
+  background:linear-gradient(135deg,#ffb6c9,#f7d5e6,#ffc0cb);
+  overflow-x:hidden;
+  text-align:center;
+  color:#8b1649;
+}
+.card {
+  width:90%;
+  max-width:430px;
+  padding:35px 22px;
+  margin:25px auto;
+  background:#ffffffdf;
+  border-radius:28px;
+  box-shadow:0 15px 45px #a52a5260;
+}
+.heart {font-size:65px;animation:beat 1s infinite}
+h1 {font-size:32px}
+p {font-size:18px;line-height:1.8}
+button {
+  padding:14px 25px;
+  border:0;
+  border-radius:30px;
+  background:#e83e78;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  margin:8px;
+}
+button:hover {background:#bd205a}
+#letter {display:none}
+.small {font-size:14px;color:#a64b70}
+.float {
+ position:fixed;
+ bottom:-40px;
+ animation:up 6s linear forwards;
+ pointer-events:none;
+}
+@keyframes beat {
+  50% {transform:scale(1.2)}
+}
+@keyframes up {
+ to {transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+  <div class="heart">❤️</div>
+  <h1>Hey My Princess! 🥺</h1>
+
+  <p>
+    I have something special to tell you...
+    <br>
+    Please don't close this page. 💗
+  </p>
+
+  <button onclick="showLetter()">
+    Open My Heart 💌
+  </button>
+
+  <div id="letter">
+    <h2>I'm Really Sorry! 🥺</h2>
+
+    <p>
+      My love, I know you're angry with me.
+      <br><br>
+      Maybe I made a mistake, but hurting you
+      was never my intention.
+      <br><br>
+      Your smile means everything to me.
+      I don't want to win an argument.
+      I just want to see you happy again.
+      <br><br>
+      Please forgive your silly boy.
+      I love you so much! ❤️
+    </p>
+
+    <h2>One Last Question... 💗</h2>
+    <p>Will you forgive me, my love?</p>
+
+    <button onclick="yes()">YES, I FORGIVE YOU ❤️</button>
+    <button onclick="wait()">NOT YET 🙈</button>
+
+    <h2 id="answer"></h2>
+  </div>
+
+  <p class="small">Made with endless love ❤️ — Vardhan</p>
+</div>
+
+<script>
+function showLetter() {
+  document.getElementById("letter").style.display="block";
+}
+
+function yes() {
+  document.getElementById("answer").innerHTML =
+  "Yayyyyy! 🥹❤️ You are my happiness!";
+}
+
+function wait() {
+  document.getElementById("answer").innerHTML =
+  "I'll wait for your smile, my princess 🥺💕";
+}
+
+setInterval(function() {
+  let h=document.createElement("div");
+  h.className="float";
+  h.innerHTML=["❤️","💕","💗","🌹"][Math.floor(Math.random()*4)];
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize="25px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},500);
+</script>
+</body>
+</html>
